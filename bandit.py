@@ -30,6 +30,7 @@ class Bandit:
     def get_average_reward(self):
         return self.__mean
 
+
 if __name__ == '__main__':
 
     import matplotlib.pyplot as plt

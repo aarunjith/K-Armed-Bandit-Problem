@@ -2,6 +2,7 @@ from agent import Agent
 from bandit import Bandit
 import numpy as np
 
+
 class Env:
     """
     Environment with k-bandits where the agent plays

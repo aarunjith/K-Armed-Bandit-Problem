@@ -1,6 +1,7 @@
 import numpy as np
 import random
 
+
 class Agent:
     """
     Agent to play the bandits
