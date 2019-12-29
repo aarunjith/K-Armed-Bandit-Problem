@@ -36,14 +36,25 @@ class Env:
 
 if __name__ == "__main__":
     import tqdm
-    TIMESTEPS = 1000000
-    env = Env(10, True)
-    agent = Agent(eps=0.01, alpha=0.1)
+    import matplotlib.pyplot as plt
+
+    TIMESTEPS = 10000
+    env = Env(5, True)
+    agent = Agent(eps=0.5, alpha=0.01)
+
     for t in tqdm.tqdm(range(TIMESTEPS)):
         env.update_values(agent)
+
     print(f"Final actual average rewards are {[b.get_average_reward() for b in env.bandits]} ")
     print(f"Final bandit values : {env.values}")
     print(f"Number of Updates : {env.updates}")
     print(f"Average reward obtained : {sum(agent.rewards)/TIMESTEPS}")
 
-
+    # Plotting average rewards over time
+    cumsums = np.cumsum(agent.rewards)
+    cumavg = [k / (i + 1) for i, k in enumerate(cumsums)]
+    plt.plot(cumavg)
+    plt.title("Rewards over time")
+    plt.ylabel("Rewards")
+    plt.xlabel("Timesteps")
+    plt.show()
