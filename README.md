@@ -3,4 +3,4 @@ Code implementation of the classic K Armed Bandits problem from fundamental rein
 
 To test this out just run the main.py. 
 
-_Feel free to play around with the hardcoded properties of the agent or the envirionment_
+_Feel free to play around with the hardcoded properties of the agent or the environment_
